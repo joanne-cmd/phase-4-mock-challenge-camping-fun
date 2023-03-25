@@ -40,4 +40,6 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
 end
 
-gem "active_model_serializers", "~> 0.10.12"
+gem 'nokogiri', '~> 1.13.1'
+gem 'psych', '< 4'
+gem 'active_model_serializers'

@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  resources :signups, only:[:create]
-  resources :activities, only:[:index, :destroy]
-  # resources :campers, only:[:index, :show, :create]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :campers, only: [:index, :show, :create] do
-    resources :activities, only: [:index]
-  end
+
+  # Activities Routes
+  #   GET /activities
+  #   DELETE /activities/:id
+  resources :activities, only: [:index, :destroy]
+
+  # Campers Routes
+  #   GET /campers
+  #   GET /campers/:id
+  #   POST /campers
+  resources :campers, only: [:index, :show, :create]
+
+  # Signup Routes
+  #   POST /signups
+  resources :signups, only: [:create]
 end
